@@ -1,4 +1,4 @@
-<?php
+git commit -m "Loyiha 100% tayyor - Yakuniy versiya"<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -20,8 +20,8 @@ return new class extends Migration
                 $table->integer('questions_to_ask')->default(10); // Nechta savol tushishi kerak
                 $table->timestamps();
             });
-        }        
-    
+        }
+
 
     /**
      * Reverse the migrations.
