@@ -64,3 +64,18 @@ Route::post('/exam/{unique_link}/start', [StudentExamController::class, 'startEx
 Route::get('/exam/{unique_link}/test', [StudentExamController::class, 'showTest'])->name('student.test');
 Route::post('/exam/{unique_link}/submit', [StudentExamController::class, 'submitTest'])->name('student.submit');
 Route::get('/result/{result_id}', [StudentExamController::class, 'showResult'])->name('student.result');
+
+
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
+Route::get('/create-admin', function () {
+    $user = User::firstOrCreate(
+        ['email' => 'anvarovumidjon88@gmail.com'],
+        [
+            'name' => 'Umidjon',
+            'password' => Hash::make('12345678'),
+        ]
+    );
+    return "Admin muvaffaqiyatli yaratildi: " . $user->email;
+});
