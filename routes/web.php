@@ -73,8 +73,10 @@ Route::get('/create-admin', function () {
     $user = User::firstOrCreate(
         ['email' => 'anvarovumidjon88@gmail.com'],
         [
-            'name' => 'Umidjon',
-            'password' => Hash::make('12345678'),
+            'first_name' => 'Umidjon',
+            'last_name'  => 'Anvarov',
+            'role'       => 'admin',    
+            'password'   => Hash::make('12345678'),
         ]
     );
     return "Admin muvaffaqiyatli yaratildi: " . $user->email;
